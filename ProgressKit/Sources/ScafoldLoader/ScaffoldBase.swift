@@ -16,7 +16,7 @@ public class ScaffoldBase:UIView{
         let gradient = CAGradientLayer()
         gradient.startPoint = CGPoint(x: 0, y: 0.5)
         gradient.endPoint = CGPoint(x: 1, y: 0.5)
-        let colors:[CGColor] = [UIColor.lightGray.cgColor, .whiteGray, UIColor.lightGray.cgColor]
+        let colors:[CGColor] = [.mat_gray, .mat_gray2, .mat_gray]
         gradient.colors = colors
         gradient.locations = [0.25,0.50,0.75]
         return gradient
@@ -59,12 +59,13 @@ public class ScaffoldBase:UIView{
     }
     
     public override func layoutSubviews() {
-         gradientLayer.frame = CGRect(x: -bounds.width, y: bounds.origin.y, width: 3 * bounds.width, height: bounds.height)
+         gradientLayer.frame = CGRect(x: -bounds.width, y: bounds.origin.y, width: 3 * bounds.width, height: bounds.height * 2)
         clipsToBounds = true
     }
     
     public override func removeFromSuperview() {
         //gradientLayer.removeAllAnimations()
+        
     }
 }
 
@@ -73,6 +74,14 @@ extension CGColor{
     public static var whiteGray:CGColor{
         return UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 0.7).cgColor
         
+    }
+    
+    public static var mat_gray2:CGColor{
+         return UIColor(red:0.86, green:0.86, blue:0.86, alpha:1.0).cgColor
+    }
+    
+    public static var mat_gray:CGColor{
+        return UIColor(red:0.79, green:0.79, blue:0.79, alpha:1.0).cgColor
     }
 }
 

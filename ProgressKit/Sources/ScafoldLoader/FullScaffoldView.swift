@@ -24,8 +24,13 @@ public class FullScaffoldView:UIView{
         super.init(coder: aDecoder)
     }
     
+    /*
+     Shows the progress or loader view.
+     @param: segments -> Number of segments you want. This is useful to simulate table views. Currently a max segmnet of 10
+     */
     public func showProgress(with segments:CGFloat){
-       self.segments = segments
+        
+        self.segments = segments < 11 ? segments : 10
         addDividers()
         syntesizeBases()
     }

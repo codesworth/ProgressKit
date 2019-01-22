@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let progress = FullScaffoldView(frame: view.frame)
-        progress.showProgress(with: 4)
+        progress.showProgress(with: 20)
         view.addSubview(progress)
         
     }
