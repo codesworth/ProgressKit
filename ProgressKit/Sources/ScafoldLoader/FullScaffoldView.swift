@@ -16,6 +16,8 @@ public class FullScaffoldView:UIView{
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
+//        backgroundColor = UIColor.gray
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,25 +26,37 @@ public class FullScaffoldView:UIView{
     
     public func showProgress(with segments:CGFloat){
        self.segments = segments
+        addDividers()
         syntesizeBases()
     }
     
     func makeSizeFrom(_ segments:CGFloat)->CGSize{
-        let width = frame.width * 0.8
-        let height = (frame.height / segments) * 0.7
+        let width = frame.width * 0.9
+        let height = (frame.height / segments) * 0.8
         return CGSize(width: width, height: height)
     }
     
     private func syntesizeBases(){
         let baseSize = makeSizeFrom(segments)
         for segment in 0..<Int(segments){
-            let originX = frame.width * 0.1
+            let originX = frame.width * 0.05
             let originY = calculateOrginY(CGFloat(segment))
             let base = ScaffoldBase(frame: CGRect(origin: CGPoint(x: originX, y: originY), size: baseSize))
             addSubview(base)
+            
         }
     }
     
+    func addDividers(){
+        if segments > 1{
+            for seg in 0..<Int(segments){
+               let divY = (frame.height / segments) * CGFloat(seg)
+                let line = UIView(frame: CGRect(x: 0, y: divY, width: frame.width, height: 1))
+                line.backgroundColor = .lightGray
+                addSubview(line)
+            }
+        }
+    }
     
     func calculateOrginY(_ position:CGFloat)->CGFloat{
         let divHeight = frame.height / segments
