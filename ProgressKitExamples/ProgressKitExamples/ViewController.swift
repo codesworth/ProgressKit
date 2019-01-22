@@ -23,6 +23,8 @@ class ViewController: UIViewController {
         progress.showProgress(with: 20)
         view.addSubview(progress)
         
+        let loader = ActivityLoaderView(frame: view.frame, offset: 0, text: "Heyaaa")
+        view.addSubview(loader)
     }
 
 }
