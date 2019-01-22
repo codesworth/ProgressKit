@@ -10,6 +10,8 @@
 		C401854321F733A5009F7EEF /* ProgressKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C401853921F733A4009F7EEF /* ProgressKit.framework */; };
 		C401854821F733A6009F7EEF /* ProgressKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C401854721F733A6009F7EEF /* ProgressKitTests.swift */; };
 		C401854A21F733A6009F7EEF /* ProgressKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C401853C21F733A4009F7EEF /* ProgressKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C401855621F73491009F7EEF /* ScaffoldBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C401855521F73491009F7EEF /* ScaffoldBase.swift */; };
+		C401855821F73725009F7EEF /* FullScaffoldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C401855721F73725009F7EEF /* FullScaffoldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		C401854221F733A5009F7EEF /* ProgressKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C401854721F733A6009F7EEF /* ProgressKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressKitTests.swift; sourceTree = "<group>"; };
 		C401854921F733A6009F7EEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C401855521F73491009F7EEF /* ScaffoldBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaffoldBase.swift; sourceTree = "<group>"; };
+		C401855721F73725009F7EEF /* FullScaffoldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScaffoldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 		C401853B21F733A4009F7EEF /* ProgressKit */ = {
 			isa = PBXGroup;
 			children = (
+				C401855321F733C7009F7EEF /* Sources */,
 				C401853C21F733A4009F7EEF /* ProgressKit.h */,
 				C401853D21F733A4009F7EEF /* Info.plist */,
 			);
@@ -84,6 +89,23 @@
 				C401854921F733A6009F7EEF /* Info.plist */,
 			);
 			path = ProgressKitTests;
+			sourceTree = "<group>";
+		};
+		C401855321F733C7009F7EEF /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C401855421F733D7009F7EEF /* ScafoldLoader */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		C401855421F733D7009F7EEF /* ScafoldLoader */ = {
+			isa = PBXGroup;
+			children = (
+				C401855521F73491009F7EEF /* ScaffoldBase.swift */,
+				C401855721F73725009F7EEF /* FullScaffoldView.swift */,
+			);
+			path = ScafoldLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +170,7 @@
 				TargetAttributes = {
 					C401853821F733A4009F7EEF = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					C401854121F733A5009F7EEF = {
 						CreatedOnToolsVersion = 10.1;
@@ -194,6 +217,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C401855621F73491009F7EEF /* ScaffoldBase.swift in Sources */,
+				C401855821F73725009F7EEF /* FullScaffoldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +366,7 @@
 		C401854E21F733A6009F7EEF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -358,6 +384,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.codesworth.ProgressKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +393,7 @@
 		C401854F21F733A6009F7EEF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -391,6 +419,7 @@
 		C401855121F733A6009F7EEF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MB46J93Q7Z;
 				INFOPLIST_FILE = ProgressKitTests/Info.plist;
@@ -409,6 +438,7 @@
 		C401855221F733A6009F7EEF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MB46J93Q7Z;
 				INFOPLIST_FILE = ProgressKitTests/Info.plist;
