@@ -49,7 +49,7 @@ public class TWAlertView:UIView{
     }
     
     public func dismiss(){
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.4, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.1, options: .curveEaseInOut, animations: {
             self.baseAlertView.frame.origin.y += self.baseAlertView.height
         }) { (sucess) in
             

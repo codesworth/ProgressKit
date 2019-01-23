@@ -6,4 +6,11 @@
 //  Copyright © 2019 Mensah Shadrach. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension UIColor{
+    
+    public class var background_tab:UIColor{
+        return UIColor(red:0.94, green:0.94, blue:0.96, alpha:1.0)
+    }
+}

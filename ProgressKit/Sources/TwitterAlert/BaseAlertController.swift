@@ -15,8 +15,11 @@ public typealias TWAlertOptions = [TWAlertOption]
 public class BaseAlertController:UIView{
     
     private var alertTable:UITableView
+    private class var maxHeight:CGFloat{
+        return UIScreen.main.bounds.height - 80
+    }
     internal var height:CGFloat = 0
-    let lengthOffset = 100
+    let lengthOffset:CGFloat = 100
     private var options:TWAlertOptions
     var dismissMethod: TWAlertmethods?
     override init(frame: CGRect) {
@@ -43,8 +46,10 @@ public class BaseAlertController:UIView{
         self.options = options
         
         let ops = options.count
-        let tableHeight = (ops * 50) + 10
-        let total = tableHeight + 70
+        let estimatedHeight = (ops * 50) + 10
+        let total = CGFloat(estimatedHeight) < BaseAlertController.maxHeight ? CGFloat(estimatedHeight) + 70 :  BaseAlertController.maxHeight
+        let tableHeight = CGFloat(estimatedHeight) < BaseAlertController.maxHeight ? CGFloat(estimatedHeight) : BaseAlertController.maxHeight - 80
+        
         height = CGFloat(total)
         let frame = CGRect(x: 0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: CGFloat(total + lengthOffset))
         let tabframe = CGRect(origin: .zero, size: CGSize(width: frame.width, height:CGFloat(tableHeight)))
@@ -54,20 +59,25 @@ public class BaseAlertController:UIView{
         alertTable.register(TWAlertCell.self, forCellReuseIdentifier: TWAlertCell.identifier)
         super.init(frame: frame)
         self.frame = frame
-        
+        if estimatedHeight > Int(BaseAlertController.maxHeight - 70){
+           alertTable.isScrollEnabled = true
+        }else{
+            alertTable.isScrollEnabled = false
+        }
         self.makeCancel()
         self.backgroundColor = UIColor.white
+        clipsToBounds = true
         alertTable.delegate = self
         alertTable.dataSource = self
     }
     
     func makeCancel(){
        let cancel = UIButton(frame: CGRect(x: 10, y: height - 70, width: frame.width - 20, height: 40))
-        cancel.backgroundColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.0)
+        cancel.backgroundColor = .background_tab //UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.0)
         cancel.setTitle("Cancel", for: .normal)
         cancel.clipsToBounds = true
         cancel.setTitleColor(.darkText, for: .normal)
-        cancel.layer.cornerRadius = 25
+        cancel.layer.cornerRadius = 20
         addSubview(cancel)
         cancel.addTarget(self, action: #selector(dismiss), for: .touchUpInside)
     }
@@ -79,13 +89,13 @@ public class BaseAlertController:UIView{
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = 5
+        layer.cornerRadius = 10
+        alertTable.showsVerticalScrollIndicator = false
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowRadius = 2
         layer.shadowOpacity = 0.65
         layer.shadowOffset = CGSize(width: 0, height: 2)
         alertTable.backgroundColor = .clear
-        alertTable.isScrollEnabled = alertTable.contentSize.height > alertTable.frame.height
         self.addSubview(alertTable)
     }
     
