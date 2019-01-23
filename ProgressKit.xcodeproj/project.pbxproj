@@ -12,10 +12,10 @@
 		C401854A21F733A6009F7EEF /* ProgressKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C401853C21F733A4009F7EEF /* ProgressKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C401855621F73491009F7EEF /* ScaffoldBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C401855521F73491009F7EEF /* ScaffoldBase.swift */; };
 		C401855821F73725009F7EEF /* FullScaffoldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C401855721F73725009F7EEF /* FullScaffoldView.swift */; };
+		C48BED7521F8773F00D0A4F7 /* TWAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48BED7421F8773F00D0A4F7 /* TWAlertView.swift */; };
 		C4E8DFE621F75B9B00E4A984 /* ActivityLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8DFE521F75B9B00E4A984 /* ActivityLoaderView.swift */; };
 		C4E8DFE921F77CA400E4A984 /* BaseAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8DFE821F77CA400E4A984 /* BaseAlertController.swift */; };
 		C4E8DFEC21F788BE00E4A984 /* Foundations+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8DFEB21F788BE00E4A984 /* Foundations+Extensions.swift */; };
-		C4E8DFEE21F7A1F300E4A984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4E8DFED21F7A1F300E4A984 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,11 +51,11 @@
 		C401854921F733A6009F7EEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C401855521F73491009F7EEF /* ScaffoldBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaffoldBase.swift; sourceTree = "<group>"; };
 		C401855721F73725009F7EEF /* FullScaffoldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScaffoldView.swift; sourceTree = "<group>"; };
+		C48BED7421F8773F00D0A4F7 /* TWAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWAlertView.swift; sourceTree = "<group>"; };
 		C4E8DFD521F7447D00E4A984 /* ProgressKitExamples.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ProgressKitExamples.xcodeproj; path = ProgressKitExamples/ProgressKitExamples.xcodeproj; sourceTree = "<group>"; };
 		C4E8DFE521F75B9B00E4A984 /* ActivityLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityLoaderView.swift; sourceTree = "<group>"; };
 		C4E8DFE821F77CA400E4A984 /* BaseAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAlertController.swift; sourceTree = "<group>"; };
 		C4E8DFEB21F788BE00E4A984 /* Foundations+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundations+Extensions.swift"; sourceTree = "<group>"; };
-		C4E8DFED21F7A1F300E4A984 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,6 @@
 				C4E8DFE721F779DA00E4A984 /* TwitterAlert */,
 				C4E8DFE421F75B0C00E4A984 /* ActivityLoader */,
 				C401855421F733D7009F7EEF /* ScafoldLoader */,
-				C4E8DFED21F7A1F300E4A984 /* Assets.xcassets */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -157,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				C4E8DFE821F77CA400E4A984 /* BaseAlertController.swift */,
+				C48BED7421F8773F00D0A4F7 /* TWAlertView.swift */,
 			);
 			path = TwitterAlert;
 			sourceTree = "<group>";
@@ -284,7 +284,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4E8DFEE21F7A1F300E4A984 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48BED7521F8773F00D0A4F7 /* TWAlertView.swift in Sources */,
 				C401855621F73491009F7EEF /* ScaffoldBase.swift in Sources */,
 				C401855821F73725009F7EEF /* FullScaffoldView.swift in Sources */,
 				C4E8DFE621F75B9B00E4A984 /* ActivityLoaderView.swift in Sources */,

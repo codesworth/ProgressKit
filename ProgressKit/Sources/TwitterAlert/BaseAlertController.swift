@@ -9,14 +9,16 @@
 import UIKit
 
 public typealias TWAlertmethods = ()->()
-public typealias TWAlertOption = (String,TWAlertmethods)
+public typealias TWAlertOption = (String,TWAlertmethods,UIImage?)
 public typealias TWAlertOptions = [TWAlertOption]
 
 public class BaseAlertController:UIView{
     
     private var alertTable:UITableView
-    private var height:CGFloat = 0
+    internal var height:CGFloat = 0
+    let lengthOffset = 100
     private var options:TWAlertOptions
+    var dismissMethod: TWAlertmethods?
     override init(frame: CGRect) {
         alertTable = UITableView(frame: frame, style: .plain)
         alertTable.separatorStyle = .none
@@ -37,14 +39,14 @@ public class BaseAlertController:UIView{
         
     }
     
-    public init(options:TWAlertOptions,icons:[UIImage]? = nil){
+    public init(options:TWAlertOptions){
         self.options = options
         
         let ops = options.count
         let tableHeight = (ops * 50) + 10
-        let total = tableHeight + 50
+        let total = tableHeight + 70
         height = CGFloat(total)
-        let frame = CGRect(x: 0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: CGFloat(total))
+        let frame = CGRect(x: 0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: CGFloat(total + lengthOffset))
         let tabframe = CGRect(origin: .zero, size: CGSize(width: frame.width, height:CGFloat(tableHeight)))
         alertTable = UITableView(frame: tabframe, style: .plain)
         alertTable.separatorStyle = .none
@@ -54,13 +56,13 @@ public class BaseAlertController:UIView{
         self.frame = frame
         
         self.makeCancel()
-        self.backgroundColor = UIColor.black
+        self.backgroundColor = UIColor.white
         alertTable.delegate = self
         alertTable.dataSource = self
     }
     
     func makeCancel(){
-       let cancel = UIButton(frame: CGRect(x: 10, y: height - 50, width: frame.width - 20, height: 50))
+       let cancel = UIButton(frame: CGRect(x: 10, y: height - 70, width: frame.width - 20, height: 40))
         cancel.backgroundColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.0)
         cancel.setTitle("Cancel", for: .normal)
         cancel.clipsToBounds = true
@@ -77,7 +79,13 @@ public class BaseAlertController:UIView{
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        alertTable.backgroundColor = .green
+        layer.cornerRadius = 5
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowRadius = 2
+        layer.shadowOpacity = 0.65
+        layer.shadowOffset = CGSize(width: 0, height: 2)
+        alertTable.backgroundColor = .clear
+        alertTable.isScrollEnabled = alertTable.contentSize.height > alertTable.frame.height
         self.addSubview(alertTable)
     }
     
@@ -98,11 +106,7 @@ public class BaseAlertController:UIView{
 
     
     @objc func dismiss(){
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.2, options: .curveEaseInOut, animations: {
-            self.frame.origin.y += self.height
-        }) { (sucess) in
-            
-        }
+        dismissMethod?()
     }
 }
 
@@ -120,7 +124,7 @@ extension BaseAlertController:UITableViewDelegate,UITableViewDataSource{
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let option = options[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: TWAlertCell.identifier, for: indexPath) as? TWAlertCell{
-            cell.configure(title: option.0)
+            cell.configure(title: option.0, icon: option.2)
             return cell
         }
         return TWAlertCell()
@@ -144,11 +148,10 @@ class TWAlertCell:UITableViewCell{
     
     private var lable:UILabel = {
         let lable = UILabel()
-        lable.backgroundColor = .red
+        lable.backgroundColor = .clear
         lable.textAlignment = .left
-        lable.text = "Please work aa"
-        lable.textColor = .black
-        lable.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        lable.textColor = .darkGray
+        lable.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         lable.numberOfLines = 1
         return lable
     }()
@@ -171,11 +174,11 @@ class TWAlertCell:UITableViewCell{
         commonInit()
     }
     
-//    init(frame:CGRect){
-//        super.init(style: , reuseIdentifier: String(describing: TWAlertCell.self))
-//        backgroundColor = UIColor.groupTableViewBackground
-//        commonInit()
-//    }
+    init(frame:CGRect){
+        super.init(style: CellStyle.default, reuseIdentifier: String(describing: TWAlertCell.self))
+        backgroundColor = UIColor.groupTableViewBackground
+        commonInit()
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -185,20 +188,20 @@ class TWAlertCell:UITableViewCell{
         super.layoutSubviews()
         addSubview(icon)
         addSubview(lable)
-        icon = UIImageView(frame: CGRect(x: 8, y: 15/2, width: 35, height: 35))
-        lable = UILabel(frame: CGRect(x: 60, y: 10, width: 100, height: 30))
+        icon.frame = CGRect(x: 8, y: 15/2, width: 35, height: 35)
+        lable.frame = CGRect(x: 60, y: 10, width: frame.width - 60, height: 30)
         
     }
     
-    func configure(title:String,icon:String? = nil){
+    func configure(title:String,icon:UIImage?){
         lable.text = title
-        if let ic = icon {self.icon.image = UIImage(named: ic)}
+        self.icon.image = icon
         self.icon.image = UIImage(named: "ic")
     }
     
     
     func commonInit(){
-        self.backgroundColor = UIColor.groupTableViewBackground
+        self.backgroundColor = UIColor.white
         contentView.addSubview(icon)
         contentView.addSubview(lable)
         selectionStyle = .none

@@ -11,7 +11,7 @@ import ProgressKit
 
 class ViewController: UIViewController {
 
-    var alert:BaseAlertController!
+    var alert:TWAlertView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,14 +34,15 @@ class ViewController: UIViewController {
         view.addSubview(button)
         button.center = view.center
         
-        let options = [("Pay 10$",{print("I Paid holy <Molly")}),("Pay 1000$",{print("I Paid holy <Moses")}),("Fire Me Please",{print("II was fired")})]
-        alert = BaseAlertController(options: options)
-        view.addSubview(alert)
+        let options = [("Pay 10$",{print("I Paid holy <Molly")},UIImage(named: "ic")),("Pay 1000$",{print("I Paid holy <Moses")},UIImage(named: "ic")),("Fire Me Please",{print("II was fired")},UIImage(named: "ic"))]
+        alert = TWAlertView(options: options)
+        
         
     }
     
     @objc func pressMe(){
-        alert.showSelf()
+        view.addSubview(alert)
+        
     }
 
 }
