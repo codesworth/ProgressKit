@@ -19,6 +19,7 @@ public class BaseAlertController:UIView{
         return UIScreen.main.bounds.height - 80
     }
     internal var height:CGFloat = 0
+    
     let lengthOffset:CGFloat = 100
     private var options:TWAlertOptions
     var dismissMethod: TWAlertmethods?

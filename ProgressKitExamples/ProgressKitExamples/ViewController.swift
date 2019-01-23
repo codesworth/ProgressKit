@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         view.addSubview(button)
         button.center = view.center
         
-        let options = [("Pay 10$",{print("I Paid holy <Molly")},UIImage(named: "ic")),("Pay 1000$",{print("I Paid holy <Moses")},UIImage(named: "ic")),("Fire Me Please",{print("II was fired")},UIImage(named: "ic")),("Pay 10$",{print("I Paid holy <Molly")},UIImage(named: "ic")),("Pay 1000$",{print("I Paid holy <Moses")},UIImage(named: "ic")),("Fire Me Please",{print("II was fired")},UIImage(named: "ic")),("Pay 10$",{print("I Paid holy <Molly")},UIImage(named: "ic")),("Pay 1000$",{print("I Paid holy <Moses")},UIImage(named: "ic")),("Fire Me Please",{print("II was fired")},UIImage(named: "ic")),("Pay 10$",{print("I Paid holy <Molly")},UIImage(named: "ic")),("Pay 1000$",{print("I Paid holy <Moses")},UIImage(named: "ic")),("Fire Me Please",{print("II was fired")},UIImage(named: "ic")),("Pay 10$",{print("I Paid holy <Molly")},UIImage(named: "ic")),("Pay 1000$",{print("I Paid holy <Moses")},UIImage(named: "ic")),("Fire Me Please",{print("II was fired")},UIImage(named: "ic")),("Pay 10$",{print("I Paid holy <Molly")},UIImage(named: "ic")),("Pay 1000$",{print("I Paid holy <Moses")},UIImage(named: "ic")),("Fire Me Please",{print("II was fired")},UIImage(named: "ic"))]
+        let options = [("Pay 10$",{print("I Paid holy <Molly")},UIImage(named: "ic")),("Pay 1000$",{print("I Paid holy <Moses")},UIImage(named: "ic"))]
         alert = TWAlertView(options: options)
         
         

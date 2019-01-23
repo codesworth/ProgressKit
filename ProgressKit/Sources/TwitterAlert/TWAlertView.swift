@@ -13,6 +13,7 @@ public class TWAlertView:UIView{
     private var baseAlertView:BaseAlertController!
     private var overlay:UIView!
     private var icons:[UIImage]?
+    private var initialCenter = CGPoint()
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -34,6 +35,7 @@ public class TWAlertView:UIView{
     
     public override func didMoveToWindow() {
         super.didMoveToWindow()
+        
         backgroundColor = UIColor.clear
         overlay.backgroundColor = .darkGray
         overlay.alpha = 0.5
@@ -42,6 +44,43 @@ public class TWAlertView:UIView{
         baseAlertView.showSelf()
     }
     
+    /**
+     Unused. Finding best way to Implement
+     */
+    func makeDrag(){
+        let dragInteraction = UIPanGestureRecognizer(target: self, action: #selector(panRemove(_:)))
+        dragInteraction.maximumNumberOfTouches = 1
+        self.overlay.addGestureRecognizer(dragInteraction)
+        
+    }
+    
+    /**
+     Not Properly Implemented
+     */
+    
+    @objc func panRemove(_ gestureRecognizer: UIPanGestureRecognizer){
+        guard let panView = gestureRecognizer.view else { return}
+        let translation = gestureRecognizer.translation(in: panView.superview)
+        
+        if gestureRecognizer.state == .began{
+            initialCenter = panView.center
+        }
+        
+        if gestureRecognizer.state == .changed{
+            let newCenter = CGPoint(x: initialCenter.x , y: initialCenter.y + translation.y)
+            panView.center = newCenter
+        }
+        
+        if gestureRecognizer.state == .ended{
+            let dy = panView.center.y - center.y
+            if  dy.magnitude > frame.height * 0.4{
+                self.dismiss()
+            }else{
+                
+            }
+        }
+
+    }
     
     
     public func show(){
