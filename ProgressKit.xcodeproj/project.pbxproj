@@ -15,6 +15,7 @@
 		C48BED7521F8773F00D0A4F7 /* TWAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48BED7421F8773F00D0A4F7 /* TWAlertView.swift */; };
 		C48BED7921F8A80800D0A4F7 /* UIKIt+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48BED7821F8A80800D0A4F7 /* UIKIt+Extensions.swift */; };
 		C4A6FAA32201160E00D3F789 /* NotificationAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A6FAA22201160E00D3F789 /* NotificationAlertView.swift */; };
+		C4A944F02202602200D40C44 /* BaseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A944EF2202602200D40C44 /* BaseCard.swift */; };
 		C4E8DFE621F75B9B00E4A984 /* ActivityLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8DFE521F75B9B00E4A984 /* ActivityLoaderView.swift */; };
 		C4E8DFE921F77CA400E4A984 /* BaseAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8DFE821F77CA400E4A984 /* BaseAlertController.swift */; };
 		C4E8DFEC21F788BE00E4A984 /* Foundations+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8DFEB21F788BE00E4A984 /* Foundations+Extensions.swift */; };
@@ -56,6 +57,7 @@
 		C48BED7421F8773F00D0A4F7 /* TWAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWAlertView.swift; sourceTree = "<group>"; };
 		C48BED7821F8A80800D0A4F7 /* UIKIt+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKIt+Extensions.swift"; sourceTree = "<group>"; };
 		C4A6FAA22201160E00D3F789 /* NotificationAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAlertView.swift; sourceTree = "<group>"; };
+		C4A944EF2202602200D40C44 /* BaseCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCard.swift; sourceTree = "<group>"; };
 		C4E8DFD521F7447D00E4A984 /* ProgressKitExamples.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ProgressKitExamples.xcodeproj; path = ProgressKitExamples/ProgressKitExamples.xcodeproj; sourceTree = "<group>"; };
 		C4E8DFE521F75B9B00E4A984 /* ActivityLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityLoaderView.swift; sourceTree = "<group>"; };
 		C4E8DFE821F77CA400E4A984 /* BaseAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAlertController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		C401855321F733C7009F7EEF /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C4A944EC22025FE700D40C44 /* FlippingCards */,
 				C4A6FA9F2201154F00D3F789 /* NotificationAlertView */,
 				C4E8DFEA21F7889700E4A984 /* Extensions */,
 				C4E8DFE721F779DA00E4A984 /* TwitterAlert */,
@@ -146,6 +149,14 @@
 				C4A6FAA22201160E00D3F789 /* NotificationAlertView.swift */,
 			);
 			path = NotificationAlertView;
+			sourceTree = "<group>";
+		};
+		C4A944EC22025FE700D40C44 /* FlippingCards */ = {
+			isa = PBXGroup;
+			children = (
+				C4A944EF2202602200D40C44 /* BaseCard.swift */,
+			);
+			path = FlippingCards;
 			sourceTree = "<group>";
 		};
 		C4E8DFD621F7447D00E4A984 /* Products */ = {
@@ -318,6 +329,7 @@
 				C4A6FAA32201160E00D3F789 /* NotificationAlertView.swift in Sources */,
 				C48BED7521F8773F00D0A4F7 /* TWAlertView.swift in Sources */,
 				C401855621F73491009F7EEF /* ScaffoldBase.swift in Sources */,
+				C4A944F02202602200D40C44 /* BaseCard.swift in Sources */,
 				C401855821F73725009F7EEF /* FullScaffoldView.swift in Sources */,
 				C4E8DFE621F75B9B00E4A984 /* ActivityLoaderView.swift in Sources */,
 				C4E8DFE921F77CA400E4A984 /* BaseAlertController.swift in Sources */,
