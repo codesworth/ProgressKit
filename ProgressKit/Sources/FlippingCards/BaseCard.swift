@@ -48,7 +48,7 @@ class BaseCard: UIView {
     
     func AnimateForever(){
         let ops = getRandomColorAndTransition()
-        UIView.transition(from: self, to: self, duration: 0.8, options: [ops.1]) { (succ) in
+        UIView.transition(from: self, to: self, duration: 0.8, options: [ops.1,.showHideTransitionViews]) { (succ) in
             self.backgroundColor = ops.0
             self.AnimateForever()
         }

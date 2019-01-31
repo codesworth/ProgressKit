@@ -19,7 +19,7 @@ public class FlippingCards: UIView {
         let nframe = UIScreen.main.bounds
         super.init(frame: nframe)
         self.frame = nframe
-        backgroundColor = .darkGray
+        backgroundColor = .lightGray
         alpha = 0.5
     }
     
@@ -27,7 +27,7 @@ public class FlippingCards: UIView {
         let nframe = UIScreen.main.bounds
         super.init(frame: nframe)
         self.frame = nframe
-        backgroundColor = .darkGray
+        backgroundColor = .lightGray
         alpha = 0.5
     }
     
@@ -45,10 +45,16 @@ public class FlippingCards: UIView {
     
     public override func didMoveToWindow() {
         super.didMoveToWindow()
-        card.AnimateForever()
+        animateForever()
     }
     
-    
+    func animateForever(){
+        UIView.transition(with: card, duration: 1, options: [card.getRandomColorAndTransition().1], animations: {
+            self.card.backgroundColor = self.card.colors.randomElement()!
+        }) { (tr) in
+            self.animateForever()
+        }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
