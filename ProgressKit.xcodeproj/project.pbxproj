@@ -16,6 +16,7 @@
 		C48BED7921F8A80800D0A4F7 /* UIKIt+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48BED7821F8A80800D0A4F7 /* UIKIt+Extensions.swift */; };
 		C4A6FAA32201160E00D3F789 /* NotificationAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A6FAA22201160E00D3F789 /* NotificationAlertView.swift */; };
 		C4A944F02202602200D40C44 /* BaseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A944EF2202602200D40C44 /* BaseCard.swift */; };
+		C4A944F722038FEA00D40C44 /* FlippingCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A944F622038FEA00D40C44 /* FlippingCards.swift */; };
 		C4E8DFE621F75B9B00E4A984 /* ActivityLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8DFE521F75B9B00E4A984 /* ActivityLoaderView.swift */; };
 		C4E8DFE921F77CA400E4A984 /* BaseAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8DFE821F77CA400E4A984 /* BaseAlertController.swift */; };
 		C4E8DFEC21F788BE00E4A984 /* Foundations+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8DFEB21F788BE00E4A984 /* Foundations+Extensions.swift */; };
@@ -58,6 +59,7 @@
 		C48BED7821F8A80800D0A4F7 /* UIKIt+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKIt+Extensions.swift"; sourceTree = "<group>"; };
 		C4A6FAA22201160E00D3F789 /* NotificationAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAlertView.swift; sourceTree = "<group>"; };
 		C4A944EF2202602200D40C44 /* BaseCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCard.swift; sourceTree = "<group>"; };
+		C4A944F622038FEA00D40C44 /* FlippingCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlippingCards.swift; sourceTree = "<group>"; };
 		C4E8DFD521F7447D00E4A984 /* ProgressKitExamples.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ProgressKitExamples.xcodeproj; path = ProgressKitExamples/ProgressKitExamples.xcodeproj; sourceTree = "<group>"; };
 		C4E8DFE521F75B9B00E4A984 /* ActivityLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityLoaderView.swift; sourceTree = "<group>"; };
 		C4E8DFE821F77CA400E4A984 /* BaseAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAlertController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				C4A944EF2202602200D40C44 /* BaseCard.swift */,
+				C4A944F622038FEA00D40C44 /* FlippingCards.swift */,
 			);
 			path = FlippingCards;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				C48BED7521F8773F00D0A4F7 /* TWAlertView.swift in Sources */,
 				C401855621F73491009F7EEF /* ScaffoldBase.swift in Sources */,
 				C4A944F02202602200D40C44 /* BaseCard.swift in Sources */,
+				C4A944F722038FEA00D40C44 /* FlippingCards.swift in Sources */,
 				C401855821F73725009F7EEF /* FullScaffoldView.swift in Sources */,
 				C4E8DFE621F75B9B00E4A984 /* ActivityLoaderView.swift in Sources */,
 				C4E8DFE921F77CA400E4A984 /* BaseAlertController.swift in Sources */,

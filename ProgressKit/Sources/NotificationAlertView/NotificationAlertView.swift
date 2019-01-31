@@ -26,7 +26,7 @@ class NotificationAlertView: UIView {
         return label
     }()
     
-    var method:CompletionHandlers.notification?
+    var method:((String?)->())?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
