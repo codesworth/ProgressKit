@@ -15,11 +15,13 @@ public class FlippingCards: UIView {
         return v
     }()
     
+    let overlay = UIView()
+    
     override init(frame: CGRect) {
         let nframe = UIScreen.main.bounds
         super.init(frame: nframe)
         self.frame = nframe
-        backgroundColor = .lightGray
+        backgroundColor = .clear
         alpha = 0.5
     }
     
@@ -27,7 +29,7 @@ public class FlippingCards: UIView {
         let nframe = UIScreen.main.bounds
         super.init(frame: nframe)
         self.frame = nframe
-        backgroundColor = .lightGray
+        backgroundColor = .clear
         alpha = 0.5
     }
     
@@ -36,8 +38,12 @@ public class FlippingCards: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
+        overlay.frame = frame
+        overlay.backgroundColor = .darkGray
+        overlay.alpha = 0.7
         card.frame.size = CGSize(width: 80, height: 80)
         card.center = center
+        addSubview(overlay)
         addSubview(card)
     }
     
