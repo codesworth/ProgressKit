@@ -10,11 +10,23 @@ import UIKit
 import ProgressKit
 
 class ViewController: UIViewController {
-
+    
+    let arb = Item(name: "Hanbe", count: 0)
+    let zp = Item(name: "Poola", count: 3)
+    var array:[Item]!
     var alert:TWAlertView!
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
+        array = [arb,zp]
+        print("The first iterations are: \(array.debugDescription)")
+        
+        arb.itemcount = 1000
+        print("The second iterations are: \(array.debugDescription)")
+        
+        array.forEach { (item) in
+            print("This is the count: \(item.itemName) and \(item.itemcount)")
+        }
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -27,18 +39,18 @@ class ViewController: UIViewController {
 //
 //        let loader = ActivityLoaderView(frame: view.frame, offset: 0, text: "Heyaaa")
 //        view.addSubview(loader)
-//        let button = UIButton(frame: CGRect(origin: .zero, size: CGSize(width: 200, height: 50)))
-//        button.backgroundColor = UIColor.brown
-//        button.setTitleColor(.white, for: .normal)
-//        button.setTitle("Press Me", for: .normal)
-//        button.addTarget(self, action: #selector(pressMe), for: .touchUpInside)
-//        view.addSubview(button)
-//        button.center = view.center
-//        
-//        let options = [("Pay 10$",{print("I Paid holy <Molly")},UIImage(named: "ic")),("Pay 1000$",{print("I Paid holy <Moses")},UIImage(named: "ic"))]
-//        alert = TWAlertView(options: options)
-        var flip = FlippingCards()
-        view.addSubview(flip)
+        let button = UIButton(frame: CGRect(origin: .zero, size: CGSize(width: 200, height: 50)))
+        button.backgroundColor = UIColor.brown
+        button.setTitleColor(.white, for: .normal)
+        button.setTitle("Press Me", for: .normal)
+        button.addTarget(self, action: #selector(pressMe), for: .touchUpInside)
+        view.addSubview(button)
+        button.center = view.center
+//
+        let options = [("Pay 10$",{print("I Paid holy <Molly")},UIImage(named: "ic")),("Pay 1000$",{print("I Paid holy <Moses")},UIImage(named: "ic"))]
+        alert = TWAlertView(options: options)
+//        var flip = FlippingCards()
+//        view.addSubview(flip)
         
         
         
@@ -50,4 +62,17 @@ class ViewController: UIViewController {
     }
 
 }
+
+
+class Item{
+    var itemcount:Int
+    var itemName:String
+    
+    init(name:String,count:UInt) {
+        itemName = name
+        itemcount = Int(count)
+    }
+}
+
+
 
