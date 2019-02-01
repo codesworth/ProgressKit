@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SnackBar: UIView {
+public class SnackBar: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -18,10 +18,15 @@ class SnackBar: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    class func makeSnackIn(_ parent:UIView, text:String, color:UIColor = .seafoamBlue){
+    public class func makeSnackIn(_ parent:UIView, text:String, color:UIColor = .seafoamBlue){
         let snackbar = SnackBar(frame: CGRect(x: 0, y: parent.frame.height, width: parent.frame.width, height: 40))
         snackbar.backgroundColor = color
         parent.addSubview(snackbar)
+        let label = UILabel.init(frame: snackbar.frame)
+        snackbar.addSubview(label)
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        label.backgroundColor = .clear
         UIView.animate(withDuration: 1, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.2, options: .curveEaseInOut, animations: {
             snackbar.frame.origin.y -= 40
         })

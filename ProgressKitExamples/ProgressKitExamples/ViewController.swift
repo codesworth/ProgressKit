@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         alert = TWAlertView(options: options)
 //        var flip = FlippingCards()
 //        view.addSubview(flip)
-        
+        SnackBar.makeSnackIn(view, text: "Hey There Boys Im snacky")
         
         
     }
