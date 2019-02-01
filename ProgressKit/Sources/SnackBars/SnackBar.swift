@@ -27,10 +27,11 @@ public class SnackBar: UIView {
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         label.backgroundColor = .clear
+        label.text = text
         UIView.animate(withDuration: 1, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.2, options: .curveEaseInOut, animations: {
             snackbar.frame.origin.y -= 40
         })
-        UIView.animate(withDuration: 0.5, delay: 4, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.5, delay: 6, options: .curveEaseOut, animations: {
             snackbar.frame.origin.y += 50
         }) { (success) in
             snackbar.removeFromSuperview()
