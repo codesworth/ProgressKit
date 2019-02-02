@@ -22,7 +22,7 @@ public class SnackBar: UIView {
         let snackbar = SnackBar(frame: CGRect(x: 0, y: parent.frame.height, width: parent.frame.width, height: 40))
         snackbar.backgroundColor = color
         parent.addSubview(snackbar)
-        let label = UILabel.init(frame: snackbar.frame)
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: parent.frame.width, height: 40))
         snackbar.addSubview(label)
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
