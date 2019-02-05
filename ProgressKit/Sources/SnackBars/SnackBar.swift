@@ -19,17 +19,17 @@ public class SnackBar: UIView {
     }
     
     public class func makeSnackIn(_ parent:UIView, text:String, color:UIColor = .seafoamBlue){
-        let snackbar = SnackBar(frame: CGRect(x: 0, y: parent.frame.height, width: parent.frame.width, height: 40))
+        let snackbar = SnackBar(frame: CGRect(x: 0, y: parent.frame.height, width: parent.frame.width, height: 50))
         snackbar.backgroundColor = color
         parent.addSubview(snackbar)
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: parent.frame.width, height: 40))
+        let label = UILabel(frame: CGRect(x: 12, y: 0, width: parent.frame.width, height: 50))
         snackbar.addSubview(label)
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         label.backgroundColor = .clear
         label.text = text
         UIView.animate(withDuration: 1, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.2, options: .curveEaseInOut, animations: {
-            snackbar.frame.origin.y -= 40
+            snackbar.frame.origin.y -= 50
         })
         UIView.animate(withDuration: 0.5, delay: 6, options: .curveEaseOut, animations: {
             snackbar.frame.origin.y += 50

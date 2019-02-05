@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38D22161220A2DD1002E811E /* PKAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D22160220A2DD1002E811E /* PKAlertView.swift */; };
 		C401854321F733A5009F7EEF /* ProgressKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C401853921F733A4009F7EEF /* ProgressKit.framework */; };
 		C401854821F733A6009F7EEF /* ProgressKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C401854721F733A6009F7EEF /* ProgressKitTests.swift */; };
 		C401854A21F733A6009F7EEF /* ProgressKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C401853C21F733A4009F7EEF /* ProgressKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38D22160220A2DD1002E811E /* PKAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKAlertView.swift; sourceTree = "<group>"; };
 		C401853921F733A4009F7EEF /* ProgressKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProgressKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C401853C21F733A4009F7EEF /* ProgressKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressKit.h; sourceTree = "<group>"; };
 		C401853D21F733A4009F7EEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				C4E8DFE721F779DA00E4A984 /* TwitterAlert */,
 				C4E8DFE421F75B0C00E4A984 /* ActivityLoader */,
 				C401855421F733D7009F7EEF /* ScafoldLoader */,
+				38D22160220A2DD1002E811E /* PKAlertView.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				C4D1307222050FA1003E6E0D /* SnackBar.swift in Sources */,
 				C4A944F02202602200D40C44 /* BaseCard.swift in Sources */,
 				C4A944F722038FEA00D40C44 /* FlippingCards.swift in Sources */,
+				38D22161220A2DD1002E811E /* PKAlertView.swift in Sources */,
 				C401855821F73725009F7EEF /* FullScaffoldView.swift in Sources */,
 				C4E8DFE621F75B9B00E4A984 /* ActivityLoaderView.swift in Sources */,
 				C4E8DFE921F77CA400E4A984 /* BaseAlertController.swift in Sources */,
