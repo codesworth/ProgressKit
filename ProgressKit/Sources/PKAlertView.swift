@@ -19,10 +19,15 @@ public class PKAlertView:UIView{
         view.alpha = 0.6
         return view
     }()
-    private var alertView:UIView
+    private var alertView:UIView = {
+        let view = UIView(frame: .zero)
+        view.backgroundColor = UIColor.seafoamBlue
+        return view
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
