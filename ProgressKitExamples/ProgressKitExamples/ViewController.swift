@@ -17,13 +17,16 @@ class ViewController: UIViewController {
     var alert:TWAlertView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
+        let imageView = UIImageView(frame: view.frame)
+        let image:Image = "img3"
+        imageView.image = image.image
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        
+        flipAcard()
     }
     
     
@@ -83,5 +86,16 @@ class Item{
     }
 }
 
+
+
+class Image:ExpressibleByStringLiteral {
+    typealias StringLiteralType = String
+    
+    var image:UIImage?
+    
+    required init(stringLiteral value: Image.StringLiteralType) {
+        image = UIImage(named: value)
+    }
+}
 
 

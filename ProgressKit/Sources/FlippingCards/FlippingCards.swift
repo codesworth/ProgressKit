@@ -39,8 +39,8 @@ public class FlippingCards: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         overlay.frame = frame
-        overlay.backgroundColor = .darkGray
-        overlay.alpha = 0.7
+        overlay.backgroundColor = .black
+        overlay.alpha = 0.5
         card.frame.size = CGSize(width: 80, height: 80)
         card.center = center
         addSubview(overlay)

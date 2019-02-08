@@ -34,11 +34,11 @@ class BaseCard: UIView {
         return [
             .transitionFlipFromLeft,
             .transitionFlipFromRight,
-            .transitionCurlUp,
-            .transitionCurlDown,
             .transitionCrossDissolve,
             .transitionFlipFromTop,
-            .transitionFlipFromBottom
+            .transitionFlipFromBottom,
+            
+            
         ]
     }
     
