@@ -22,7 +22,7 @@ public class FlippingCards: UIView {
         super.init(frame: nframe)
         self.frame = nframe
         backgroundColor = .clear
-        alpha = 0.5
+        
     }
     
     init(){
@@ -30,7 +30,7 @@ public class FlippingCards: UIView {
         super.init(frame: nframe)
         self.frame = nframe
         backgroundColor = .clear
-        alpha = 0.5
+        
     }
     
     

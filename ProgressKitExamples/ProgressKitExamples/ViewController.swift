@@ -21,6 +21,8 @@ class ViewController: UIViewController {
         let imageView = UIImageView(frame: view.frame)
         let image:Image = "img3"
         imageView.image = image.image
+        imageView.contentMode = .scaleAspectFill
+        view.addSubview(imageView)
     }
 
     override func viewDidAppear(_ animated: Bool) {
